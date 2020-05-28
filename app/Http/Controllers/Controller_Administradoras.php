@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Administradoras;
 
-class Pessoas extends Controller
+class Controller_Administradoras extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,8 @@ class Pessoas extends Controller
      */
     public function index()
     {
-        //
+        $admistradoras = Administradoras::all();
+        return json_encode($admistradoras);
     }
 
     /**
