@@ -14,8 +14,8 @@ class Controller_Administradoras extends Controller
      */
     public function index()
     {
-        $admistradoras = Administradoras::all();
-        return json_encode($admistradoras);
+        $administradora = Administradoras::all();
+        return view('administradoras', compact('administradora'));
     }
 
     /**
