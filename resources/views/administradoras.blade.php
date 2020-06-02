@@ -4,9 +4,11 @@
 
 <div class="card border">
     <div class="card-body">
-        <h5 class="card-title">Corretoras Cadastradas</h5>
+        <button class="btn btn-success btn-lg">
+            <img src="{{ asset('icons/plus-circle-fill.svg')}}" width="20px" height="20px"> Novo Item
+        </button>
         <div class="table-responsive">
-            <table class="table table-ordered table-hover" id="tableADM">
+            <table class="table table-ordered table-striped" id="tableADM">
                 <thead>
                     <tr>
                         <th>Código</th>
@@ -22,8 +24,12 @@
                         <td>{{ $adm->nome }}</td>
                         <td>{{ $adm->cnpj}}</td>
                         <td>
-                            <a href="/administradoras/edit/{{$adm->id}}" class="btn btn-sm btn-primary">Editar</a>
-                            <a href="/administradoras/delete/{{$adm->id}}" class="btn btn-sm btn-danger">Apagar</a>
+                            <a href="/administradoras/edit/{{$adm->id}}" class="btn btn-sm btn-primary">
+                                <img src="{{ asset('icons/pencil.svg') }}" width="20px" height="20px">
+                            </a>
+                            <a href="/administradoras/delete/{{$adm->id}}" class="btn btn-sm btn-danger">
+                                <img src="{{ asset('icons/trash-fill.svg') }}" width="20px" height="20px">
+                            </a>
                         </td>
                     </tr>
                     @endforeach

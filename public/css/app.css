@@ -211,6 +211,7 @@ figure {
 
 img {
   vertical-align: middle;
+  text-align: center;
   border-style: none;
 }
 
@@ -3347,7 +3348,9 @@ fieldset:disabled a.btn {
   padding: 0.5rem 1rem;
   font-size: 1.125rem;
   line-height: 1.5;
-  border-radius: 0.3rem;
+  border-radius: 25px;
+  float: right;
+  margin-bottom: 1em;
 }
 
 .btn-sm,
@@ -7186,6 +7189,8 @@ button.bg-dark:focus {
 
 .rounded-circle {
   border-radius: 50% !important;
+  height: 35px;
+  width: 35px;
 }
 
 .rounded-pill {
