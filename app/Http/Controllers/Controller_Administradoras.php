@@ -58,7 +58,10 @@ class Controller_Administradoras extends Controller
      */
     public function edit($id)
     {
-        //
+        $administradora = Administradoras::find($id);
+            if(isset($administradora)) {
+                return view('editAdmin', compact('administradora'));
+            }
     }
 
     /**
@@ -70,7 +73,15 @@ class Controller_Administradoras extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $administradora = Administradoras::find($id);
+            if(isset($administradora)) {
+                $administradora->nome = $request->input('nomeAdmin');
+                $administradora->cnpj = $request->input('cnpjAdmin');
+                
+                $administradora->save();
+
+                return redirect('/administradoras');
+            }
     }
 
     /**
