@@ -81,6 +81,11 @@ class Controller_Administradoras extends Controller
      */
     public function destroy($id)
     {
-        //
+        $administradora = Administradoras::find($id);
+            if(isset($administradora)) {
+                $administradora->delete();
+                return redirect('/administradoras');
+            }
+
     }
 }

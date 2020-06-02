@@ -19,3 +19,4 @@ Route::get('/', function () {
 
 
 Route::get('/administradoras', 'Controller_Administradoras@index');
+Route::get('/administradoras/delete/{id}', 'Controller_Administradoras@destroy');

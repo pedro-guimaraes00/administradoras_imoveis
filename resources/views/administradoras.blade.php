@@ -22,8 +22,8 @@
                         <td>{{ $adm->nome }}</td>
                         <td>{{ $adm->cnpj}}</td>
                         <td>
-                            <a href="/products/edit/{{$adm->id}}" class="btn btn-sm btn-primary">Editar</a>
-                            <a href="/products/delete/{{$adm->id}}" class="btn btn-sm btn-danger">Apagar</a>
+                            <a href="/administradoras/edit/{{$adm->id}}" class="btn btn-sm btn-primary">Editar</a>
+                            <a href="/administradoras/delete/{{$adm->id}}" class="btn btn-sm btn-danger">Apagar</a>
                         </td>
                     </tr>
                     @endforeach
