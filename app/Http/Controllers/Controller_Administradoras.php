@@ -25,7 +25,7 @@ class Controller_Administradoras extends Controller
      */
     public function create()
     {
-        //
+        return view('/newAdmin');
     }
 
     /**
@@ -36,7 +36,12 @@ class Controller_Administradoras extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $administradora = new Administradoras;
+        $administradora->nome = $request->input('nomeAdmin');
+        $administradora->cnpj = $request->input('cnpjAdmin');
+
+        $administradora->save();
+        return redirect('/administradoras');
     }
 
     /**

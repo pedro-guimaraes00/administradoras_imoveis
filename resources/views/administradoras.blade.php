@@ -4,9 +4,9 @@
 
 <div class="card border">
     <div class="card-body">
-        <button class="btn btn-success btn-lg">
+        <a href="/administradoras/new" class="btn btn-success btn-lg">
             <img src="{{ asset('icons/plus-circle-fill.svg')}}" width="20px" height="20px"> Novo Item
-        </button>
+        </a>
         <div class="table-responsive">
             <table class="table table-ordered table-striped" id="tableADM">
                 <thead>

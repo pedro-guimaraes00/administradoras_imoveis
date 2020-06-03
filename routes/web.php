@@ -21,4 +21,6 @@ Route::get('/', function () {
 Route::get('/administradoras', 'Controller_Administradoras@index');
 Route::get('/administradoras/delete/{id}', 'Controller_Administradoras@destroy');
 Route::get('/administradoras/edit/{id}', 'Controller_Administradoras@edit');
+Route::get('/administradoras/new', 'Controller_Administradoras@create');
+Route::post('/administradoras', 'Controller_Administradoras@store');
 Route::post('/administradoras/{id}', 'Controller_Administradoras@update');
