@@ -10,7 +10,7 @@
           <a class="nav-link" href="/clientes">Clientes</a>
         </li>
         <li @if($current=="condominios") class="nav-item active" @else class="nav-item" @endif>
-            <a class="nav-link" href="#">Condomínios</a>
+            <a class="nav-link" href="/condominios">Condomínios</a>
         </li>
         <li @if($current=="corretoras") class="nav-item active" @else class="nav-item" @endif>
             <a class="nav-link" href="/administradoras">Corretoras</a>

@@ -27,3 +27,6 @@ Route::post('/administradoras/{id}', 'Controller_Administradoras@update');
 
 
 Route::get('/clientes', 'Controller_Pessoas@index');
+
+
+Route::get('/condominios', 'Controller_Condominios@index');

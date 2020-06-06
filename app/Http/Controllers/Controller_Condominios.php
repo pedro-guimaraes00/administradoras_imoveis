@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Condominios;
 
 class Controller_Condominios extends Controller
 {
@@ -13,7 +14,8 @@ class Controller_Condominios extends Controller
      */
     public function index()
     {
-        //
+        $condominios = Condominios::all();
+        return view('/condominios', compact('condominios'));
     }
 
     /**
