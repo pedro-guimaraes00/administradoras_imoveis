@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Pessoas;
 
 class Controller_Pessoas extends Controller
 {
@@ -13,7 +14,8 @@ class Controller_Pessoas extends Controller
      */
     public function index()
     {
-        //
+        $pessoas = Pessoas::all();
+        return view('pessoas', compact('pessoas'));
     }
 
     /**
