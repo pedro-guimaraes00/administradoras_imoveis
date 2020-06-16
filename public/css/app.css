@@ -6184,6 +6184,10 @@ a.close.disabled {
   overflow: hidden;
 }
 
+.modal-open .card, .modal-open .navbar {
+  -webkit-filter: blur(3px) grayscale(50%);
+}
+
 .modal-open .modal {
   overflow-x: hidden;
   overflow-y: auto;

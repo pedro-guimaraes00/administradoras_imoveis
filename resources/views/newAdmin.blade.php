@@ -1,31 +1,35 @@
-@extends('layout.app', ["current" => "corretoras"])
-
-@section('body')
-
-    <div class="card border">
-        <div class="card-body">
-        <h5 class="card-title">Nova Corretora</h5>
-        <form class="needs-validation" action="/administradoras" method="POST" novalidate>
-                @csrf
-                <div class="form-group">
-                    <input type="text" class="form-control" name="nomeAdmin" id="nomeAdmin"
-                    placeholder="Nome" required>
-                    <div class="invalid-feedback">
-                        O campo é obrigatório.
-                    </div>
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" name="cnpjAdmin" id="cnpjAdmin"
-                    placeholder="CNPJ" required>
-                    <div class="invalid-feedback">
-                        O campo é obrigatório.
-                    </div>
-                </div>
-                <button type="submit" class="btn btn-primary btn-sm">Salvar</button>
-                <button type="cancel" class="btn btn-danger btn-sm">Cancelar</button>
-            </form>
-        </div>
-    </div>
+<div class="modal" tabindex="-1" role="dialog" id="dlgAdmin">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <form class="needs-validation" action="/administradoras" method="POST" novalidate>
+          @csrf
+              <div class="modal-header">
+                  <h5 class="modal-title">Novo Produto</h5>
+              </div>
+              <div class="modal-body">
+                  <div class="form-group">
+                      <input type="text" class="form-control" name="nomeAdmin" id="nomeAdmin"
+                      placeholder="Nome" required>
+                      <div class="invalid-feedback">
+                          O campo é obrigatório.
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <input type="text" class="form-control" name="cnpjAdmin" id="cnpjAdmin"
+                      placeholder="CNPJ" required>
+                      <div class="invalid-feedback">
+                          O campo é obrigatório.
+                      </div>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="submit" class="btn btn-primary btn-sm">Salvar</button>
+                      <button type="cancel" class="btn btn-danger btn-sm">Cancelar</button>
+                  </div>
+              </div>
+          </form>
+      </div>
+  </div>
+</div>
 
     <script>
         // Example starter JavaScript for disabling form submissions if there are invalid fields
@@ -46,6 +50,4 @@
             });
           }, false);
         })();
-        </script>
-
-@endsection
+    </script>

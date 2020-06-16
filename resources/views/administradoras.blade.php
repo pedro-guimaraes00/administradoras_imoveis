@@ -4,9 +4,9 @@
 
 <div class="card border">
     <div class="card-body">
-        <a href="/administradoras/new" class="btn btn-success btn-lg">
+        <button class="btn btn-success btn-lg" role="button" onclick="newAdmin()">
             <img src="{{ asset('icons/plus-circle-fill.svg')}}" width="20px" height="20px"> Novo Item
-        </a>
+        </button>
         <div class="table-responsive">
             <table class="table table-ordered table-striped" id="tableADM">
                 <thead>
@@ -38,5 +38,22 @@
         </div>    
     </div>
 </div>
+
+@include('newAdmin')
     
+
+@endsection
+
+@section('javascript')
+
+    <script type="text/javascript">
+
+        function newAdmin() {
+                $('#nomeAdmin').val('');
+                $('#cnpjAdmin').val('');
+                $('#dlgAdmin').modal('show');
+            }
+
+    </script>
+        
 @endsection
