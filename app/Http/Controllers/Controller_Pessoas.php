@@ -25,7 +25,7 @@ class Controller_Pessoas extends Controller
      */
     public function create()
     {
-        //
+        return view('/newPessoa');
     }
 
     /**
@@ -36,7 +36,13 @@ class Controller_Pessoas extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $pessoa = new Pessoas;
+        $pessoa->cpf = $request->input("cpfPessoa");
+        $pessoa->nome = $request->input("nomePessoa");
+        $pessoa->telefone = $request->input("telPessoa");
+        $pessoa->save();
+
+        return redirect('/clientes');
     }
 
     /**

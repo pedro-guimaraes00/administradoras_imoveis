@@ -41,19 +41,19 @@
 
 @include('newAdmin')
     
-
 @endsection
+
 
 @section('javascript')
 
-    <script type="text/javascript">
+<script type="text/javascript">
 
-        function newAdmin() {
-                $('#nomeAdmin').val('');
-                $('#cnpjAdmin').val('');
-                $('#dlgAdmin').modal('show');
-            }
+    function newAdmin() {
+            $('#nomeAdmin').val('');
+            $('#cnpjAdmin').val('');
+            $('#dlgAdmin').modal('show');
+        }
 
-    </script>
-        
+</script>
+    
 @endsection

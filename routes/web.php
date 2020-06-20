@@ -27,6 +27,8 @@ Route::post('/administradoras/{id}', 'Controller_Administradoras@update');
 
 
 Route::get('/clientes', 'Controller_Pessoas@index');
+Route::get('/clientes/new', 'Controller_Pessoas@create');
+Route::post('/clientes', 'Controller_Pessoas@store');
 
 
 Route::get('/condominios', 'Controller_Condominios@index');

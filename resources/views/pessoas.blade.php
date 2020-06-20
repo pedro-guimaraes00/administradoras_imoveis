@@ -4,9 +4,9 @@
 
 <div class="card border">
     <div class="card-body">
-        <a href="/clientes/new" class="btn btn-success btn-lg">
+        <button class="btn btn-success btn-lg" role="button" onclick="newPessoa()">
             <img src="{{ asset('icons/plus-circle-fill.svg')}}" width="20px" height="20px"> Novo Item
-        </a>
+        </button>
         <div class="table-responsive">
             <table class="table table-ordered table-striped" id="tableADM">
                 <thead>
@@ -39,4 +39,18 @@
     </div>
 </div>
     
+@include('newPessoa')
+
+@endsection
+
+@section('javascript')
+
+<script type="text/javascript">
+    
+    function newPessoa() {
+        $('#dlgPessoa').modal('show');
+    }
+
+</script>
+
 @endsection
