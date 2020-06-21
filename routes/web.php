@@ -31,4 +31,7 @@ Route::get('/clientes/new', 'Controller_Pessoas@create');
 Route::post('/clientes', 'Controller_Pessoas@store');
 
 
+
 Route::get('/condominios', 'Controller_Condominios@index');
+Route::get('/condominios/new', 'Controller_Condominios@create');
+Route::post('/condominios', 'Controller_Condominios@store');

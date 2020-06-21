@@ -47,13 +47,11 @@
 @section('javascript')
 
 <script type="text/javascript">
-
     function newAdmin() {
             $('#nomeAdmin').val('');
             $('#cnpjAdmin').val('');
             $('#dlgAdmin').modal('show');
         }
-
 </script>
     
 @endsection
