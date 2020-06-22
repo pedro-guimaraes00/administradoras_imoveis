@@ -4,7 +4,7 @@
           <form class="needs-validation" action="/administradoras" method="POST" novalidate>
           @csrf
               <div class="modal-header">
-                  <h5 class="modal-title">Novo Produto</h5>
+                  <h5 class="modal-title">Nova Corretora</h5>
               </div>
               <div class="modal-body">
                   <div class="form-group">
@@ -23,7 +23,7 @@
                   </div>
                   <div class="modal-footer">
                       <button type="submit" class="btn btn-primary btn-sm">Salvar</button>
-                      <button type="cancel" class="btn btn-danger btn-sm">Cancelar</button>
+                      <button type="cancel" class="btn btn-danger btn-sm" data-dismiss="modal">Cancelar</button>
                   </div>
               </div>
           </form>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Administradoras;
 
@@ -42,6 +43,18 @@ class Controller_Administradoras extends Controller
 
         $administradora->save();
         return redirect('/administradoras');
+    }
+
+    /**
+     * Search for an specified data (needs Database: Query Builder)
+     * 
+     */
+
+    public function search(Request $request)
+    {
+        $search = $request->get('search');
+        $administradora = DB::table('administradoras')->where('nome', 'like', '%'.$search.'%')->paginate(25);
+        return view('administradoras', compact('administradora'));
     }
 
     /**
