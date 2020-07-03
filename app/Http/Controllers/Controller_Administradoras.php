@@ -53,8 +53,11 @@ class Controller_Administradoras extends Controller
     public function search(Request $request)
     {
         $search = $request->get('search');
-        $administradora = DB::table('administradoras')->where('nome', 'like', '%'.$search.'%')->paginate(25);
-        return view('administradoras', compact('administradora'));
+
+        $administradora = DB::table('administradoras')
+            ->where('nome', 'like', '%'.$search.'%')->paginate(25);
+            
+            return view('administradoras', compact('administradora'));
     }
 
     /**
