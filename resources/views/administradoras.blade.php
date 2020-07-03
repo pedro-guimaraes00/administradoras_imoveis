@@ -37,6 +37,9 @@
             </table>
         </div>    
     </div>
+    <div class="card-footer">
+        <p>Paginação</p>
+    </div>
 </div>
 
 @include('newAdmin')
