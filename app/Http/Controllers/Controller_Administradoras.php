@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Administradoras;
 
@@ -14,8 +15,8 @@ class Controller_Administradoras extends Controller
      */
     public function index()
     {
-        $admistradoras = Administradoras::all();
-        return json_encode($admistradoras);
+        $administradora = Administradoras::all();
+        return view('administradoras', compact('administradora'));
     }
 
     /**
@@ -25,7 +26,7 @@ class Controller_Administradoras extends Controller
      */
     public function create()
     {
-        //
+        return view('/newAdmin');
     }
 
     /**
@@ -36,7 +37,24 @@ class Controller_Administradoras extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $administradora = new Administradoras;
+        $administradora->nome = $request->input('nomeAdmin');
+        $administradora->cnpj = $request->input('cnpjAdmin');
+
+        $administradora->save();
+        return redirect('/administradoras');
+    }
+
+    /**
+     * Search for an specified data (needs Database: Query Builder)
+     * 
+     */
+
+    public function search(Request $request)
+    {
+        $search = $request->get('search');
+        $administradora = DB::table('administradoras')->where('nome', 'like', '%'.$search.'%')->paginate(25);
+        return view('administradoras', compact('administradora'));
     }
 
     /**
@@ -58,7 +76,10 @@ class Controller_Administradoras extends Controller
      */
     public function edit($id)
     {
-        //
+        $administradora = Administradoras::find($id);
+            if(isset($administradora)) {
+                return view('editAdmin', compact('administradora'));
+            }
     }
 
     /**
@@ -70,7 +91,15 @@ class Controller_Administradoras extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $administradora = Administradoras::find($id);
+            if(isset($administradora)) {
+                $administradora->nome = $request->input('nomeAdmin');
+                $administradora->cnpj = $request->input('cnpjAdmin');
+                
+                $administradora->save();
+
+                return redirect('/administradoras');
+            }
     }
 
     /**
@@ -81,6 +110,11 @@ class Controller_Administradoras extends Controller
      */
     public function destroy($id)
     {
-        //
+        $administradora = Administradoras::find($id);
+            if(isset($administradora)) {
+                $administradora->delete();
+                return redirect('/administradoras');
+            }
+
     }
 }

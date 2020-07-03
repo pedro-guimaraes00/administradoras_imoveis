@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Condominios;
 
 class Controller_Condominios extends Controller
 {
@@ -13,7 +14,8 @@ class Controller_Condominios extends Controller
      */
     public function index()
     {
-        //
+        $condominios = Condominios::all();
+        return view('/condominios', compact('condominios'));
     }
 
     /**
@@ -23,7 +25,7 @@ class Controller_Condominios extends Controller
      */
     public function create()
     {
-        //
+        return view('newCondo');
     }
 
     /**
@@ -34,7 +36,14 @@ class Controller_Condominios extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $condo = new Condominios;
+        $condo->nome = $request->input('nomeCondo');
+        $condo->lote = $request->input('loteCondo');
+        $condo->FK_idAdministradora = $request->input('FK_idAdministradora');
+        $condo->save();
+
+        return redirect('/condominios');
+
     }
 
     /**
