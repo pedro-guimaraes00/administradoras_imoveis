@@ -37,6 +37,9 @@
             </table>
         </div>    
     </div>
+    <div class="card-footer">
+        {{ $pessoas->links() }}
+    </div>
 </div>
     
 @include('newPessoa')

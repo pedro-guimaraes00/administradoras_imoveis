@@ -14,7 +14,7 @@ class Controller_Condominios extends Controller
      */
     public function index()
     {
-        $condominios = Condominios::all();
+        $condominios = Condominios::paginate(15);
         return view('/condominios', compact('condominios'));
     }
 

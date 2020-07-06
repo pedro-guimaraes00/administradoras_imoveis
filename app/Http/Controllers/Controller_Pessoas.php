@@ -14,7 +14,7 @@ class Controller_Pessoas extends Controller
      */
     public function index()
     {
-        $pessoas = Pessoas::all();
+        $pessoas = Pessoas::paginate(15);
         return view('pessoas', compact('pessoas'));
     }
 
