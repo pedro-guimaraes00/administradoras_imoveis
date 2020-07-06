@@ -64,7 +64,10 @@ class Controller_Pessoas extends Controller
      */
     public function edit($id)
     {
-        //
+        $pessoa = Pessoas::find($id);
+            if(isset($pessoa)) {
+                return view('editPessoas', compact('pessoa'));
+            }
     }
 
     /**
@@ -76,7 +79,15 @@ class Controller_Pessoas extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $pessoa = Pessoas($id);
+            if(isset($pessoa)) {
+                $pessoa->cpf = $request->input('cpfPessoa');
+                $pessoa->nome = $request->input('nomePessoa');
+                $pessoa->telefone = $request->input('telPessoa');
+
+                $pessoa->save();
+                return redirect('/clientes');
+            }
     }
 
     /**

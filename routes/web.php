@@ -29,11 +29,17 @@ Route::get('/search', 'Controller_Administradoras@search');
 
 
 Route::get('/clientes', 'Controller_Pessoas@index');
+Route::get('/clientes/delete/{id}', 'Controller_Pessoas@destroy');
 Route::get('/clientes/new', 'Controller_Pessoas@create');
 Route::post('/clientes', 'Controller_Pessoas@store');
+Route::get('/clientes/edit/{id}', 'Controller_Pessoas@edit');
+Route::post('/clientes/{id}', 'Controller_Pessoas@update');
 
 
 
 Route::get('/condominios', 'Controller_Condominios@index');
 Route::get('/condominios/new', 'Controller_Condominios@create');
 Route::post('/condominios', 'Controller_Condominios@store');
+Route::get('/condominios/edit/{id}', 'Controller_Condominios@edit');
+Route::get('/condominios/delete/{id}', 'Controller_Condominios@destroy');
+Route::post('/condominios/{id}', 'Controller_Condominios@update');

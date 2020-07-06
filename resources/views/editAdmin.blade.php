@@ -10,12 +10,12 @@
                 <div class="form-group">
                     <label for="nomeAdmin">Nome</label>
                     <input type="text" class="form-control" name="nomeAdmin" id="nomeAdmin"
-                    placeholder="Nome" value="{{$administradora->nome}}">
+                    value="{{$administradora->nome}}">
                 </div>
                 <div class="form-group">
                     <label for=cnpjAdmin">CNPJ</label>
                     <input type="text" class="form-control" name="cnpjAdmin" id="cnpjAdmin"
-                    placeholder="CNPJ" value="{{$administradora->cnpj}}">
+                    value="{{$administradora->cnpj}}">
                 </div>
                 <button type="submit" class="btn btn-primary btn-sm">Salvar</button>
                 <button type="cancel" class="btn btn-danger btn-sm">Cancelar</button>
