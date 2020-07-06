@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Pessoas;
 
@@ -43,6 +44,16 @@ class Controller_Pessoas extends Controller
         $pessoa->save();
 
         return redirect('/clientes');
+    }
+
+    public function search(Request $request)
+    {
+        $search = $request->get('search');
+
+        $pessoas = DB::table('pessoas')
+            ->where('nome', 'like', '%'.$search.'%')->paginate(15);
+            
+            return view('pessoas', compact('pessoas'));
     }
 
     /**

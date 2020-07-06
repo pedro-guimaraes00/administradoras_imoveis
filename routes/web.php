@@ -34,6 +34,7 @@ Route::get('/clientes/new', 'Controller_Pessoas@create');
 Route::post('/clientes', 'Controller_Pessoas@store');
 Route::get('/clientes/edit/{id}', 'Controller_Pessoas@edit');
 Route::post('/clientes/{id}', 'Controller_Pessoas@update');
+Route::get('/clientes/search', 'Controller_Pessoas@search');
 
 
 
