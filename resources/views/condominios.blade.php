@@ -9,12 +9,12 @@
             <div class="row">
                 <div class="col-sm">
                     <form class="form-inline my-2 my-lg-0" action="/condominios/search" method="GET">
-                        <input class="form-control mr-sm-2" type="search" name="search" placeholder="Digite algo...">
+                        <input class="form-control mr-sm-2" type="search" name="search" placeholder="Insira o nome">
                         <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Buscar</button>
                     </form>
                 </div>
                 <div class="col-sm">
-                    <button class="btn btn-success btn-lg" role="button" onclick="newPessoa()">
+                    <button class="btn btn-success btn-lg" role="button" onclick="newCondo()">
                         <img src="{{ asset('icons/plus-circle-fill.svg')}}" width="20px" height="20px"> Novo Item
                     </button>
                 </div>

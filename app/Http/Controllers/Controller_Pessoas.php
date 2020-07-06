@@ -51,7 +51,8 @@ class Controller_Pessoas extends Controller
         $search = $request->get('search');
 
         $pessoas = DB::table('pessoas')
-            ->where('nome', 'like', '%'.$search.'%')->paginate(15);
+            ->where('nome', 'like', '%'.$search.'%')
+            ->orWhere('cpf', 'like', '%'.$search.'%')->paginate(15);
             
             return view('pessoas', compact('pessoas'));
     }
