@@ -8,6 +8,7 @@
         <form class="needs-validation" action="/clientes/{{$pessoa->id}}" method="POST" novalidate>
             @csrf
                 <div class="form-group">
+                    <label for="cpfPessoa">CPF</label>
                     <input type="text" class="form-control" name="cpfPessoa" id="cpfPessoa"
                     value="{{$pessoa->cpf}}" required>
                     <div class="invalid-feedback">
@@ -15,6 +16,7 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    <label for="nomePessoa">Nome</label>
                     <input type="text" class="form-control" name="nomePessoa" id="nomePessoa"
                     value="{{$pessoa->nome}}" required>
                     <div class="invalid-feedback">
@@ -22,11 +24,13 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    <label for="telPessoa">Telefone</label>
                     <input type="text" class="form-control" name="telPessoa" id="telPessoa"
                     value="{{$pessoa->telefone}}" required>
                     <div class="invalid-feedback">
                         O campo é obrigatório.
                     </div>
+                </div>
                 <button type="submit" class="btn btn-primary btn-sm">Salvar</button>
                 <button type="cancel" class="btn btn-danger btn-sm">Cancelar</button>
             </form>

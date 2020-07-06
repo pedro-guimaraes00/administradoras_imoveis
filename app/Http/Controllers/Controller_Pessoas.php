@@ -79,7 +79,7 @@ class Controller_Pessoas extends Controller
      */
     public function update(Request $request, $id)
     {
-        $pessoa = Pessoas($id);
+        $pessoa = Pessoas::find($id);
             if(isset($pessoa)) {
                 $pessoa->cpf = $request->input('cpfPessoa');
                 $pessoa->nome = $request->input('nomePessoa');
