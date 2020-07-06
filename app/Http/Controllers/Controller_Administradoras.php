@@ -15,7 +15,7 @@ class Controller_Administradoras extends Controller
      */
     public function index()
     {
-        $administradora = Administradoras::all();
+        $administradora = Administradoras::paginate(15);
         return view('administradoras', compact('administradora'));
     }
 

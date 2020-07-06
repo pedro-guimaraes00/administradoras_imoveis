@@ -38,7 +38,7 @@
         </div>    
     </div>
     <div class="card-footer">
-        <p>Paginação</p>
+        {{ $administradora->links() }}
     </div>
 </div>
 
