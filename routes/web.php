@@ -44,3 +44,4 @@ Route::post('/condominios', 'Controller_Condominios@store');
 Route::get('/condominios/edit/{id}', 'Controller_Condominios@edit');
 Route::get('/condominios/delete/{id}', 'Controller_Condominios@destroy');
 Route::post('/condominios/{id}', 'Controller_Condominios@update');
+Route::get('/condominios/search', 'Controller_Condominios@search');

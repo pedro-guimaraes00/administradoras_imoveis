@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Condominios;
 
@@ -45,6 +46,18 @@ class Controller_Condominios extends Controller
         return redirect('/condominios');
 
     }
+
+    public function search(Request $request)
+    {
+        $search = $request->get('search');
+
+        $condominios = DB::table('condominios')
+            ->where('nome', 'like', '%'.$search.'%')->paginate(15);
+            
+            return view('condominios', compact('condominios'));
+
+    }
+
 
     /**
      * Display the specified resource.
