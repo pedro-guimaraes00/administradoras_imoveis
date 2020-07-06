@@ -87,7 +87,7 @@ class Controller_Condominios extends Controller
                 $condo->FK_idAdministradora = $request->input('FK_idAdministradora');
 
                 $condo->save();
-                
+
                 return redirect('/condominios');
             }
     }
@@ -100,6 +100,10 @@ class Controller_Condominios extends Controller
      */
     public function destroy($id)
     {
-        //
+        $condo = Condominios::find($id);
+            if(isset($condo)) {
+                $condo->delete();
+                return redirect('/condominios');
+            }
     }
 }

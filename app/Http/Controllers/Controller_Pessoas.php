@@ -98,6 +98,10 @@ class Controller_Pessoas extends Controller
      */
     public function destroy($id)
     {
-        //
+        $pessoa = Pessoas::find($id);
+            if(isset($pessoa)) {
+                $pessoa->delete();
+                return redirect('/clientes');
+            }
     }
 }
