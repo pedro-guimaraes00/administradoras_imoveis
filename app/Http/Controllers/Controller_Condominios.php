@@ -14,7 +14,7 @@ class Controller_Condominios extends Controller
      */
     public function index()
     {
-        $condominios = Condominios::all();
+        $condominios = Condominios::paginate(15);
         return view('/condominios', compact('condominios'));
     }
 
@@ -65,7 +65,10 @@ class Controller_Condominios extends Controller
      */
     public function edit($id)
     {
-        //
+        $condo = Condominios::find($id);
+            if(isset($condo)){
+                return view('editCondo', compact('condo'));
+            }
     }
 
     /**
@@ -77,7 +80,16 @@ class Controller_Condominios extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $condo = Condominios::find($id);
+            if(isset($condo)) {
+                $condo->nome = $request->input('nomeCondo');
+                $condo->lote = $request->input('loteCondo');
+                $condo->FK_idAdministradora = $request->input('FK_idAdministradora');
+
+                $condo->save();
+
+                return redirect('/condominios');
+            }
     }
 
     /**
@@ -88,6 +100,10 @@ class Controller_Condominios extends Controller
      */
     public function destroy($id)
     {
-        //
+        $condo = Condominios::find($id);
+            if(isset($condo)) {
+                $condo->delete();
+                return redirect('/condominios');
+            }
     }
 }

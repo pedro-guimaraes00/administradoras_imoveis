@@ -15,7 +15,7 @@ class Controller_Administradoras extends Controller
      */
     public function index()
     {
-        $administradora = Administradoras::all();
+        $administradora = Administradoras::paginate(15);
         return view('administradoras', compact('administradora'));
     }
 
@@ -55,7 +55,7 @@ class Controller_Administradoras extends Controller
         $search = $request->get('search');
 
         $administradora = DB::table('administradoras')
-            ->where('nome', 'like', '%'.$search.'%')->paginate(25);
+            ->where('nome', 'like', '%'.$search.'%')->paginate(15);
             
             return view('administradoras', compact('administradora'));
     }

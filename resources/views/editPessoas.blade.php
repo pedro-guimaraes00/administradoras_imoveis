@@ -1,24 +1,32 @@
-@extends('layout.app', ["current" => "corretoras"])
+@extends('layout.app', ["current" => "clientes"])
 
 @section('body')
 
     <div class="card border">
         <div class="card-body">
-        <h5 class="card-title">Editar Corretora</h5>
-        <form class="needs-validation" action="/administradoras/{{$administradora->id}}" method="POST" novalidate>
-                @csrf
+        <h5 class="card-title">Editar Cliente</h5>
+        <form class="needs-validation" action="/clientes/{{$pessoa->id}}" method="POST" novalidate>
+            @csrf
                 <div class="form-group">
-                    <label for="nomeAdmin">Nome</label>
-                    <input type="text" class="form-control" name="nomeAdmin" id="nomeAdmin"
-                    value="{{$administradora->nome}}" required>
+                    <label for="cpfPessoa">CPF</label>
+                    <input type="text" class="form-control" name="cpfPessoa" id="cpfPessoa"
+                    value="{{$pessoa->cpf}}" required>
                     <div class="invalid-feedback">
                         O campo é obrigatório.
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for=cnpjAdmin">CNPJ</label>
-                    <input type="text" class="form-control" name="cnpjAdmin" id="cnpjAdmin"
-                    value="{{$administradora->cnpj}}" required>
+                    <label for="nomePessoa">Nome</label>
+                    <input type="text" class="form-control" name="nomePessoa" id="nomePessoa"
+                    value="{{$pessoa->nome}}" required>
+                    <div class="invalid-feedback">
+                        O campo é obrigatório.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="telPessoa">Telefone</label>
+                    <input type="text" class="form-control" name="telPessoa" id="telPessoa"
+                    value="{{$pessoa->telefone}}" required>
                     <div class="invalid-feedback">
                         O campo é obrigatório.
                     </div>

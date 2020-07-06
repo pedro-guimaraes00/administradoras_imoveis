@@ -37,6 +37,9 @@
             </table>
         </div>    
     </div>
+    <div class="card-footer">
+        {{ $administradora->links() }}
+    </div>
 </div>
 
 @include('newAdmin')

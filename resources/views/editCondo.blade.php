@@ -1,24 +1,32 @@
-@extends('layout.app', ["current" => "corretoras"])
+@extends('layout.app', ["current" => "condominios"])
 
 @section('body')
 
     <div class="card border">
         <div class="card-body">
-        <h5 class="card-title">Editar Corretora</h5>
-        <form class="needs-validation" action="/administradoras/{{$administradora->id}}" method="POST" novalidate>
-                @csrf
+        <h5 class="card-title">Editar Condomínio</h5>
+        <form class="needs-validation" action="/condominios/{{$condo->id}}" method="POST" novalidate>
+            @csrf
                 <div class="form-group">
-                    <label for="nomeAdmin">Nome</label>
-                    <input type="text" class="form-control" name="nomeAdmin" id="nomeAdmin"
-                    value="{{$administradora->nome}}" required>
+                <label for="nomeCondo">Nome</label>
+                    <input type="text" class="form-control" name="nomeCondo" id="nomeCondo"
+                    value="{{$condo->nome}}" required>
                     <div class="invalid-feedback">
                         O campo é obrigatório.
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for=cnpjAdmin">CNPJ</label>
-                    <input type="text" class="form-control" name="cnpjAdmin" id="cnpjAdmin"
-                    value="{{$administradora->cnpj}}" required>
+                <label for="loteCondo">Lote do Condomínio</label>
+                    <input type="text" class="form-control" name="loteCondo" id="loteCondo"
+                    value="{{$condo->lote}}" required>
+                    <div class="invalid-feedback">
+                        O campo é obrigatório.
+                    </div>
+                </div>
+                <div class="form-group">
+                <label for="FK_idAdministradora">Código da Corretora</label>
+                    <input type="text" class="form-control" name="FK_idAdministradora" id="FK_idAdministradora"
+                    value="{{$condo->FK_idAdministradora}}" required>
                     <div class="invalid-feedback">
                         O campo é obrigatório.
                     </div>

@@ -11,6 +11,7 @@
             <table class="table table-ordered table-striped" id="tableADM">
                 <thead>
                     <tr>
+                        <th>Código</th>
                         <th>CPF</th>
                         <th>Nome</th>
                         <th>Telefone</th>
@@ -20,6 +21,7 @@
                 <tbody>
                     @foreach ($pessoas as $cli)
                     <tr>
+                        <td>{{ $cli->id}}</td>
                         <td>{{ $cli->cpf }}</td>
                         <td>{{ $cli->nome }}</td>
                         <td>{{ $cli->telefone}}</td>
@@ -36,6 +38,9 @@
                 </tbody>
             </table>
         </div>    
+    </div>
+    <div class="card-footer">
+        {{ $pessoas->links() }}
     </div>
 </div>
     

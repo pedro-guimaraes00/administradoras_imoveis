@@ -37,6 +37,9 @@
             </table>
         </div>    
     </div>
+    <div class="card-footer">
+        {{ $condominios->links() }}
+    </div>
 </div>
 
 @include('newCondo')
