@@ -8,11 +8,11 @@ use App\Condominios;
 
 class Controller_Condominios extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
+    public function __construct() {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $condominios = Condominios::paginate(15);
