@@ -45,3 +45,6 @@ Route::get('/condominios/edit/{id}', 'Controller_Condominios@edit');
 Route::get('/condominios/delete/{id}', 'Controller_Condominios@destroy');
 Route::post('/condominios/{id}', 'Controller_Condominios@update');
 Route::get('/condominios/search', 'Controller_Condominios@search');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
